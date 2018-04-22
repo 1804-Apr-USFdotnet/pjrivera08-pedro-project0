@@ -19,10 +19,21 @@ namespace RestaurantReviews.Library
 
         private List<Review> storeReviews = new List<Review>();
 
-        public void SetCustomerRating()
+        public void updateRating()
         {
-            customerRating = 1; //PLACEHOLDER VALUE
-            return;
+            customerRating = CalculateRating();
+        }
+
+        public float CalculateRating()
+        {
+            int numOfReviews = 0 ;
+            float scoreSum = 0.0f;
+            foreach (Review item in storeReviews)
+            {
+                scoreSum += item.GetReviewScore();
+                numOfReviews++;
+            }
+            return scoreSum / numOfReviews;
         }
 
         public void AddReview(Review indx)
