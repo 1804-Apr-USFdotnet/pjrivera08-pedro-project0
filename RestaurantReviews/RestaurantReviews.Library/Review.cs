@@ -10,10 +10,27 @@ namespace RestaurantReviews.Library
     {
         Review()
         {
+            reviewerName = "";
             reviewText = "";
             reviewScore = 0;
         }
+        private string reviewerName;
         private string reviewText;
         private float reviewScore;
+
+        public void UpdateName(string _name)
+        {
+            reviewerName = _name;
+        }
+        public void UpdateScore(float _value)
+        {
+            reviewScore = _value;
+        }
+        public float GetReviewScore()
+        {
+            return reviewScore;
+        }
+
+
     }
 }

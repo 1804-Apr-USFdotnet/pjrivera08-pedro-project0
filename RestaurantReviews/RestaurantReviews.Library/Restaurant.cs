@@ -17,10 +17,18 @@ namespace RestaurantReviews.Library
         private string restaurantAddress;
         private float customerRating;
 
-        private void setCustomerRating()
+        private List<Review> storeReviews = new List<Review>();
+
+        public void SetCustomerRating()
         {
             customerRating = 1; //PLACEHOLDER VALUE
             return;
         }
+
+        public void AddReview(Review indx)
+        {
+            storeReviews.Add(indx);
+        }
+        
     }
 }
