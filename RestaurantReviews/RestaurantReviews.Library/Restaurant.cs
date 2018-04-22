@@ -19,14 +19,14 @@ namespace RestaurantReviews.Library
 
         private List<Review> storeReviews = new List<Review>();
 
-        public void updateRating()
+        public void UpdateRating()
         {
             customerRating = CalculateRating();
         }
 
         public float CalculateRating()
         {
-            int numOfReviews = 0 ;
+            int numOfReviews = 0;
             float scoreSum = 0.0f;
             foreach (Review item in storeReviews)
             {

@@ -11,7 +11,7 @@ namespace RestaurantReviews.Library
         Review()
         {
             reviewerName = "";
-            reviewText = "";
+            reviewText = "Dummy Text";
             reviewScore = 0;
         }
         private string reviewerName;
