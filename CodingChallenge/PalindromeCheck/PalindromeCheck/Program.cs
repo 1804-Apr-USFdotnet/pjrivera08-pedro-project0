@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PalindromeCheck
 {
-    class Program
+    public class Program
     {
-        public static bool PalindromeCheck(string str)
+        public static bool PalindromeCheckMethod(string str)
         {
             int min = 0;
             int max = str.Length - 1;
