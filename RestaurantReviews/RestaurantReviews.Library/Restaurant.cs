@@ -23,7 +23,6 @@ namespace RestaurantReviews.Library
         {
             customerRating = CalculateRating();
         }
-
         public float CalculateRating()
         {
             int numOfReviews = 0;
@@ -35,11 +34,9 @@ namespace RestaurantReviews.Library
             }
             return scoreSum / numOfReviews;
         }
-
         public void AddReview(Review indx)
         {
             storeReviews.Add(indx);
         }
-        
     }
 }

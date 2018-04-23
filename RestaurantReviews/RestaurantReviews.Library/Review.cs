@@ -30,7 +30,5 @@ namespace RestaurantReviews.Library
         {
             return reviewScore;
         }
-
-
     }
 }
