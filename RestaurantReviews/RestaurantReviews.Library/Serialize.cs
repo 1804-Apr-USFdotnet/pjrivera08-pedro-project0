@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-
 namespace RestaurantReviewsLibrary
 {
     public static class Serialize
     {
-        public static string ToJson(this Deserialize self) => JsonConvert.SerializeObject(self, Converter.Settings);
+        public static string ToJson<T>(this T self) => JsonConvert.SerializeObject(self);
     }
 
     

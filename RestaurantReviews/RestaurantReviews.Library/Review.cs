@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantReviewsLibrary
 {
-    class Review
+    public class Review
     {
         Review()
         {
