@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantReviews.Library
+namespace RestaurantReviewsLibrary
 {
     class Review
     {
         Review()
         {
-            reviewerName = "";
+            reviewerName = "";   
             reviewText = "Dummy Text";
             reviewScore = 0;
         }

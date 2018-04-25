@@ -19,7 +19,7 @@ namespace PalindromeCheck
                 
                 if (min > max)
                 {
-                    return true; //If max gets lower than min then the string must be a palindrome
+                    return true; //If max gets lower than min then the string MUST be a palindrome
                 }
                 char a = 'A'; //Compiler didn't like me leaving these values blank
                 char b = 'B';

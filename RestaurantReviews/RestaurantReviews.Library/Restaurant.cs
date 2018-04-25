@@ -4,15 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantReviews.Library
+namespace RestaurantReviewsLibrary
 {
-    class Restaurant
+    public class Restaurant
     {
-        public Restaurant(string _name, string _address)
-        {
-            restaurantName = _name;
-            restaurantAddress = _address;
-        }
         private string restaurantName;
         private string restaurantAddress;
         private float customerRating;
