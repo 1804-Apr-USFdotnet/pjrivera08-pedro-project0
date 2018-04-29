@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantReviews.Library", "RestaurantReviews.Library\RestaurantReviews.Library.csproj", "{80C28A45-B069-4DAE-AA53-E3B80B36851A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantReviewsLibrary", "RestaurantReviews.Library\RestaurantReviewsLibrary.csproj", "{80C28A45-B069-4DAE-AA53-E3B80B36851A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantReviewsTests", "RestaurantReviewsTests\RestaurantReviewsTests.csproj", "{D684FFCB-6F4D-472B-A097-C2E56DA125F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantReviewsData", "RestaurantReviewsData\RestaurantReviewsData.csproj", "{3C566CFD-5B7D-4FFE-9045-073712011F80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantReviewsClient", "RestaurantReviewsClient\RestaurantReviewsClient.csproj", "{E250824E-3BF6-4CAE-849F-7ED69E771EDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{D684FFCB-6F4D-472B-A097-C2E56DA125F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D684FFCB-6F4D-472B-A097-C2E56DA125F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D684FFCB-6F4D-472B-A097-C2E56DA125F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C566CFD-5B7D-4FFE-9045-073712011F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C566CFD-5B7D-4FFE-9045-073712011F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C566CFD-5B7D-4FFE-9045-073712011F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C566CFD-5B7D-4FFE-9045-073712011F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E250824E-3BF6-4CAE-849F-7ED69E771EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E250824E-3BF6-4CAE-849F-7ED69E771EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E250824E-3BF6-4CAE-849F-7ED69E771EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E250824E-3BF6-4CAE-849F-7ED69E771EDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

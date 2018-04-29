@@ -12,6 +12,4 @@ namespace RestaurantReviewsLibrary
     {
         public static string ToJson<T>(this T self) => JsonConvert.SerializeObject(self);
     }
-
-    
 }

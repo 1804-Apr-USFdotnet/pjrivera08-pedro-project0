@@ -55,9 +55,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RestaurantReviews.Library\RestaurantReviews.Library.csproj">
+    <ProjectReference Include="..\RestaurantReviews.Library\RestaurantReviewsLibrary.csproj">
       <Project>{80c28a45-b069-4dae-aa53-e3b80b36851a}</Project>
-      <Name>RestaurantReviews.Library</Name>
+      <Name>RestaurantReviewsLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
