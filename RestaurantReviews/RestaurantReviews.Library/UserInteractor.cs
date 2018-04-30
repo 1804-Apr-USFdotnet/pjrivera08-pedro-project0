@@ -36,7 +36,7 @@ namespace RestaurantReviewsLibrary
             ICollection<Restaurant> list;
             string name;
             Restaurant currentRestaurant;
-
+            Console.WriteLine("");
             selection = SelectOption();
             if(selection == 1)
             {
@@ -50,15 +50,18 @@ namespace RestaurantReviewsLibrary
             }
             if(selection == 2)
             {
+
                 int sortDecision = 0;
                 while(sortDecision!=1 && sortDecision != 2)
                 {
+                    Console.WriteLine("");
                     Console.WriteLine("To sort by name please enter 1.");
                     Console.WriteLine("To sort by rating please enter 2.");
                     sortDecision = int.Parse(Console.ReadLine());
                 }
                 if(sortDecision == 1)
                 {
+                    Console.WriteLine("");
                     list = LibHelper.DataListToLibraryList(crud.SortByNameDescending());
                     foreach (Restaurant rest in list)
                     {
@@ -70,12 +73,12 @@ namespace RestaurantReviewsLibrary
                 if(sortDecision == 2)
                 {
                     list = LibHelper.DataListToLibraryList(crud.SortByRating());
-                    Console.WriteLine("List count = " + list.Count());
+                    Console.WriteLine("");
                     
                     
                     foreach (Restaurant rest in list) 
                     {
-                        Console.WriteLine(rest.RestaurantName);
+                        Console.WriteLine(rest.RestaurantName + ": " + rest.CustomerRating);
                         
                     }
 
@@ -84,6 +87,7 @@ namespace RestaurantReviewsLibrary
             }
             if(selection == 3)
             {
+                Console.WriteLine("");
                 int idDecision;
                 Console.WriteLine("Enter a restaurant Id:");
                 
@@ -93,6 +97,7 @@ namespace RestaurantReviewsLibrary
             }
             if (selection == 4)
             {
+                Console.WriteLine("");
                 ICollection<Review> revList;
                 int idDecision;
                 Console.WriteLine("Enter a restaurant Id:");
@@ -106,6 +111,7 @@ namespace RestaurantReviewsLibrary
             }
             if(selection == 5)
             {
+                Console.WriteLine("");
                 string searchQuery;
                 Console.WriteLine("Search for: ");
                 searchQuery = Console.ReadLine();
