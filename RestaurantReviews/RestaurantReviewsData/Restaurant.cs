@@ -14,7 +14,13 @@ namespace RestaurantReviewsData
     
     public partial class Restaurant
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Restaurant()
+        {
+            this.Reviews = new HashSet<Review>();
+        }
 
+    
         public int ID { get; set; }
         public string restaurantName { get; set; }
         public string restaurantAddress { get; set; }
@@ -23,5 +29,8 @@ namespace RestaurantReviewsData
         public string restaurantPhoneNumber { get; set; }
         public string restaurantURL { get; set; }
         public Nullable<double> customerRating { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

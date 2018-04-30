@@ -20,7 +20,6 @@ namespace RestaurantReviewsData
         public string reviewText { get; set; }
         public double reviewScore { get; set; }
     
-        public virtual Review Review1 { get; set; }
-        public virtual Review Review2 { get; set; }
+        public virtual Restaurant Restaurant { get; set; }
     }
 }

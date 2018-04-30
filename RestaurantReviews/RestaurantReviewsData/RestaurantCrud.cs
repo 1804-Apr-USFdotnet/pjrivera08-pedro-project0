@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+using System.Data;
+
 
 namespace RestaurantReviewsData
 {
@@ -32,6 +35,25 @@ namespace RestaurantReviewsData
             return db.Restaurants.ToList();
             
         }
+        public IEnumerable<Review> GetReviewsById(int IdNum)
+        {
+            return db.Reviews.Where(rev => rev.restaurantID == IdNum).ToList();
+        }
+
+        public IEnumerable<Restaurant> SearchRestaurantByName(string str)
+        {
+            return db.Restaurants.Where(name => name.restaurantName.Contains(str)).ToList();
+        }
+            
+        public ICollection<Restaurant> SortByRating(int listAmount)
+        {
+            return db.Restaurants.OrderByDescending(rating => rating.customerRating).Take(listAmount).ToList();
+        }
+        public IEnumerable<Restaurant> SortByNameDescending()
+        {
+            return db.Restaurants.OrderByDescending(name => name.restaurantName).ToList();
+        }
+        
         //Read 
         public void ReadRestaurants()
         {
@@ -48,7 +70,7 @@ namespace RestaurantReviewsData
             return temp;
         }
         //Update
-        public void UpdateCustomer(int id, ColumnChoice choiceName, string replacement)
+        public void UpdateRestaurant(int id, ColumnChoice choiceName, string replacement)
         {
             int choice = (int)choiceName;
             Restaurant rest = getRestaurantById(id);
@@ -82,6 +104,39 @@ namespace RestaurantReviewsData
             }
             db.SaveChanges();
         }
+        //Cannot get this to work, wasted too much time on it  
+        //public void UpdateRestaurantReviews(Restaurant rest)
+        //{
+        //    Restaurant oldVersion = getRestaurantById(rest.ID);
+        //    Review oldReview, newReview;
+        //   // updatedRest = rest;
+        //   //try instead looping thru updatedRest.REviews and applying values from rest.Reviews
+        //   for(int i = 0; i < oldVersion.Reviews.Count; i++)
+        //    {
+        //        oldReview = oldVersion.Reviews.ElementAt(i);
+        //        newReview = rest.Reviews.Where(x => x.ID == oldReview.ID).FirstOrDefault();
+        //        if (newReview != null)
+        //        {
+        //            oldReview.reviewerName = newReview.reviewerName;
+        //            oldReview.reviewText = newReview.reviewText;
+        //            oldReview.reviewScore = newReview.reviewScore;
+        //        }
+        //        else
+        //        {
+        //            oldVersion.Reviews.Remove(oldReview);
+        //            i--;
+        //        }
+        //    }
+        //   foreach(var r in rest.Reviews)
+        //    {
+        //        oldReview = oldVersion.Reviews.Where(x => x.ID == r.ID).FirstOrDefault();
+        //        if(oldReview == null)
+        //        {
+        //            oldVersion.Reviews.Add(r);
+        //        }
+        //    }
+        //    db.SaveChanges();
+        //}
         //Delete
         public void DeleteRestaurant(int id)
         {

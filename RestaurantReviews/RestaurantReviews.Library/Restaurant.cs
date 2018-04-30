@@ -24,6 +24,7 @@ namespace RestaurantReviewsLibrary
         public string RestaurantState { get => restaurantState; set => restaurantState = value; }
         public string RestaurantPhoneNumber { get => restaurantPhoneNumber; set => restaurantPhoneNumber = value; }
         public string RestaurantURL { get => restaurantURL; set => restaurantURL = value; }
+        public float CustomerRating { get => customerRating; set => customerRating = value; }
 
         public override bool Equals(object obj)
         {
@@ -67,6 +68,20 @@ namespace RestaurantReviewsLibrary
                 numOfReviews++;
             }
             return scoreSum / numOfReviews;
+        }
+
+        public List<Review> GetStoreReviews()
+        {
+            return storeReviews;
+        } 
+
+        public Review CreateReview()
+        {
+            Review newReview = new Review();
+            newReview.UpdateName("Test Review");
+            newReview.UpdateScore(5.0f);
+            newReview.RestaurantID = 1;
+            return newReview; 
         }
         public void AddReview(Review indx)
         {

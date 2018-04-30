@@ -5,10 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="db67feb824a245c4a7ae8156f2d448a1" Name="Diagram1">
-        <EntityTypeShape EntityType="RestaurantDBModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestaurantDBModel.Restaurant" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestaurantDBModel.Review" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="RestaurantDBModel.FK_Review_Review" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RestaurantDBModel.Restaurant" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="RestaurantDBModel.Review" Width="1.5" PointX="3" PointY="1.25" />
+        <AssociationConnector Association="RestaurantDBModel.FK_Review_Restaurant" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

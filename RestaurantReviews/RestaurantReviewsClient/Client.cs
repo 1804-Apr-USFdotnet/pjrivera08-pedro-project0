@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestaurantReviewsData;
+using RestaurantReviewsLibrary;
 
 namespace RestaurantReviewsClient
 {
@@ -11,10 +12,14 @@ namespace RestaurantReviewsClient
     {
         static void Main(string[] args)
         {
-            RestaurantCrud crud = new RestaurantCrud();
-            var rests = crud.ListRestaurants();
+            UserInteractor user = new RestaurantReviewsLibrary.UserInteractor();
+            while (user.OptionHandler())
+            {
 
-            crud.InsertRestaurant("Schinner-Hoppe", "14162 Kedzie Circle", "Warren", "OH", "330-322-1739", "http://examiner.com");
+            }
+
+            Console.WriteLine("Broke out of the loop!");
+            Console.ReadKey();
         }
     }
 }
