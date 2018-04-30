@@ -48,7 +48,7 @@ VALUES ('Tina','Smith','9999 9999 9999 9999');
 INSERT INTO Orders(ProductID,CustomerID)
 VALUES (4,4);
 
-select sum()
+select * From Orders where CustomerID = 4;
 
 UPDATE Products
 SET Price = 250.00
