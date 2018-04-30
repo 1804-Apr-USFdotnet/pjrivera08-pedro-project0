@@ -35,12 +35,12 @@ namespace RestaurantReviewsData
             return db.Restaurants.ToList();
             
         }
-        public IEnumerable<Review> GetReviewsById(int IdNum)
+        public ICollection<Review> GetReviewsById(int IdNum)
         {
             return db.Reviews.Where(rev => rev.restaurantID == IdNum).ToList();
         }
 
-        public IEnumerable<Restaurant> SearchRestaurantByName(string str)
+        public ICollection<Restaurant> SearchRestaurantByName(string str)
         {
             return db.Restaurants.Where(name => name.restaurantName.Contains(str)).ToList();
         }
@@ -49,19 +49,20 @@ namespace RestaurantReviewsData
         {
             return db.Restaurants.OrderByDescending(rating => rating.customerRating).Take(listAmount).ToList();
         }
-        public IEnumerable<Restaurant> SortByNameDescending()
+        public ICollection<Restaurant> SortByRating()
+        {
+            return db.Restaurants.OrderByDescending(rating => rating.customerRating).ToList();
+        }
+        public ICollection<Restaurant> SortByNameDescending()
         {
             return db.Restaurants.OrderByDescending(name => name.restaurantName).ToList();
         }
         
         //Read 
-        public void ReadRestaurants()
+        public void ReadRestaurantDetails(int IdNum)
         {
-            var rests = ListRestaurants();
-            foreach(var rest in rests)
-            {
-                Console.WriteLine(rest.ID + "|| " + rest.restaurantName + "|| " + rest.restaurantAddress + "|| " + rest.restaurantCity + ", " + rest.restaurantState + "|| " + rest.restaurantPhoneNumber + "|| " + rest.restaurantURL + "|| Rating: " + rest.customerRating);
-            }
+            Restaurant rest = getRestaurantById(IdNum);
+            Console.WriteLine(rest.ID + "|| " + rest.restaurantName + "|| " + rest.restaurantAddress + "|| " + rest.restaurantCity + ", " + rest.restaurantState + "|| " + rest.restaurantPhoneNumber + "|| " + rest.restaurantURL + "|| Rating: " + rest.customerRating);
         }
         //Search Restaurant by id (Update Supplement)
         public Restaurant getRestaurantById(int idNumber)

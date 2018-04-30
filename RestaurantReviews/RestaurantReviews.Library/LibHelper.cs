@@ -32,13 +32,21 @@ namespace RestaurantReviewsLibrary
         }
         // mapping
         
-        public static ICollection<Restaurant> DataToLibraryList(ICollection<RestaurantReviewsData.Restaurant> dataList)
+        public static ICollection<Restaurant> DataListToLibraryList(ICollection<RestaurantReviewsData.Restaurant> dataList)
         {
             ICollection<Restaurant> restaurants = new List<Restaurant>();
             foreach (RestaurantReviewsData.Restaurant r in dataList)
                 restaurants.Add(DataToLibrary(r));
             return restaurants;
         } 
+
+        public static ICollection<Review> DataReviewListToLibraryReviewList(ICollection<RestaurantReviewsData.Review> dataList)
+        {
+            ICollection<Review> reviews = new List<Review>();
+            foreach (RestaurantReviewsData.Review r in dataList)
+                reviews.Add(ReviewDataToObject(r));
+            return reviews;
+        }
 
         public static RestaurantReviewsLibrary.Restaurant DataToLibrary(RestaurantReviewsData.Restaurant dataModel)
         {
@@ -73,6 +81,18 @@ namespace RestaurantReviewsLibrary
                 dataModel.Reviews.Add(ReviewOjectToData(r));
             }
             return dataModel;
+        }
+        public static RestaurantReviewsLibrary.Review ReviewDataToObject(RestaurantReviewsData.Review data)
+        {
+            var libModel = new RestaurantReviewsLibrary.Review()
+            {
+                RestaurantID = data.ID,
+                ReviewerName = data.reviewerName,
+                ReviewText = data.reviewText,
+                ReviewScore = (float)data.reviewScore
+
+            };
+            return libModel;
         }
 
         public static RestaurantReviewsData.Review ReviewOjectToData(RestaurantReviewsLibrary.Review obj)
