@@ -17,7 +17,7 @@ namespace RestaurantReviewsLibrary
             {
                 Console.WriteLine("Select an option:");
                 Console.WriteLine("1. Display 3 top rated restaurants");
-                Console.WriteLine("2. Display all Restaurants, sorted by name");
+                Console.WriteLine("2. Display all Restaurants");
                 Console.WriteLine("3. Display Restaurant details");
                 Console.WriteLine("4. Display all Reviews of Restaurant");
                 Console.WriteLine("5. Search for Restaurant by name");
@@ -51,7 +51,7 @@ namespace RestaurantReviewsLibrary
             if(selection == 2)
             {
                 int sortDecision = 0;
-                while(sortDecision!=1 || sortDecision != 2)
+                while(sortDecision!=1 && sortDecision != 2)
                 {
                     Console.WriteLine("To sort by name please enter 1.");
                     Console.WriteLine("To sort by rating please enter 2.");
@@ -63,17 +63,23 @@ namespace RestaurantReviewsLibrary
                     foreach (Restaurant rest in list)
                     {
                         Console.WriteLine(rest.RestaurantName);
-                        return false;
+                        
                     }
+                    return false;
                 }
                 if(sortDecision == 2)
                 {
                     list = LibHelper.DataListToLibraryList(crud.SortByRating());
-                    foreach (Restaurant rest in list)
+                    Console.WriteLine("List count = " + list.Count());
+                    
+                    
+                    foreach (Restaurant rest in list) 
                     {
                         Console.WriteLine(rest.RestaurantName);
-                        return false;
+                        
                     }
+
+                    return false;
                 }
             }
             if(selection == 3)
@@ -85,13 +91,31 @@ namespace RestaurantReviewsLibrary
                 crud.ReadRestaurantDetails(idDecision);
                 return false;
             }
-            //if (selection == 4)
-            //{
-            //    int idDecision;
-            //    Console.WriteLine("Enter a restaurant Id:");
-            //    idDecision = int.Parse(Console.ReadLine());
-            //    list = LibHelper.DataReviewListToLibraryReviewList(crud.GetReviewsById(idDecision));
-            //}
+            if (selection == 4)
+            {
+                ICollection<Review> revList;
+                int idDecision;
+                Console.WriteLine("Enter a restaurant Id:");
+                idDecision = int.Parse(Console.ReadLine());
+                revList = LibHelper.DataReviewListToLibraryReviewList(crud.GetReviewsById(idDecision));
+                foreach(Review rev in revList)
+                {
+                    Console.WriteLine("Reivewer name: "+rev.ReviewerName+": "+rev.ReviewText+" Score: "+rev.ReviewScore);
+                }
+                return false;
+            }
+            if(selection == 5)
+            {
+                string searchQuery;
+                Console.WriteLine("Search for: ");
+                searchQuery = Console.ReadLine();
+                list = LibHelper.DataListToLibraryList(crud.SearchRestaurantByName(searchQuery));
+                foreach(Restaurant res in list)
+                {
+                    Console.WriteLine(res.RestaurantName);
+                }
+                return false;
+            }
             if (selection == 6)
                 return true;
             return false;

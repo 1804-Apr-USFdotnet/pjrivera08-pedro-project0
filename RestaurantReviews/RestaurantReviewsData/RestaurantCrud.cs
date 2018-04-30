@@ -51,9 +51,10 @@ namespace RestaurantReviewsData
         }
         public ICollection<Restaurant> SortByRating()
         {
-            return db.Restaurants.OrderByDescending(rating => rating.customerRating).ToList();
+            var  rests = db.Restaurants.ToList();
+            return rests.OrderByDescending(rating => rating.customerRating).Take((int)rests.Count()).ToList();
         }
-        public ICollection<Restaurant> SortByNameDescending()
+        public ICollection<Restaurant> SortByNameDescending() 
         {
             return db.Restaurants.OrderByDescending(name => name.restaurantName).ToList();
         }

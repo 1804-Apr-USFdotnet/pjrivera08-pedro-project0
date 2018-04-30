@@ -50,6 +50,8 @@ VALUES (4,4);
 
 select * From Orders where CustomerID = 4;
 
+
+
 UPDATE Products
 SET Price = 250.00
 WHERE [Name] = 'iPhone';

@@ -13,12 +13,12 @@ namespace RestaurantReviewsClient
         static void Main(string[] args)
         {
             UserInteractor user = new RestaurantReviewsLibrary.UserInteractor();
-            while (user.OptionHandler())
+            while (!user.OptionHandler())
             {
 
             }
 
-            Console.WriteLine("Broke out of the loop!");
+            Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
     }
