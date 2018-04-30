@@ -49,8 +49,8 @@ namespace RestaurantReviewsLibrary
                 RestaurantCity = dataModel.restaurantCity,
                 RestaurantState = dataModel.restaurantState,
                 RestaurantPhoneNumber = dataModel.restaurantPhoneNumber,
-                RestaurantURL = dataModel.restaurantURL
-                
+                RestaurantURL = dataModel.restaurantURL,
+                CustomerRating = (float)dataModel.customerRating
             };
             return libModel;
         }
