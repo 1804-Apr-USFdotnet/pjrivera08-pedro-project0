@@ -26,16 +26,12 @@ namespace RestaurantReviewsLibrary
                 if ((decision < 1) || (decision > 6))
                     Console.WriteLine("Please choose a value between 1-6.");
             }
-            
             return decision;
         }
         public bool OptionHandler()
         {
-            int specificId;
             int selection;
             ICollection<Restaurant> list;
-            string name;
-            Restaurant currentRestaurant;
             Console.WriteLine("");
             selection = SelectOption();
             if(selection == 1)
@@ -44,13 +40,11 @@ namespace RestaurantReviewsLibrary
                 foreach(Restaurant rest in list)
                 {
                     Console.WriteLine(rest.RestaurantName + ": " + rest.CustomerRating);
-
                 }
                 return false;
             }
             if(selection == 2)
             {
-
                 int sortDecision = 0;
                 while(sortDecision!=1 && sortDecision != 2)
                 {
@@ -66,7 +60,6 @@ namespace RestaurantReviewsLibrary
                     foreach (Restaurant rest in list)
                     {
                         Console.WriteLine(rest.RestaurantName);
-                        
                     }
                     return false;
                 }
@@ -74,14 +67,10 @@ namespace RestaurantReviewsLibrary
                 {
                     list = LibHelper.DataListToLibraryList(crud.SortByRating());
                     Console.WriteLine("");
-                    
-                    
                     foreach (Restaurant rest in list) 
                     {
                         Console.WriteLine(rest.RestaurantName + ": " + rest.CustomerRating);
-                        
                     }
-
                     return false;
                 }
             }
@@ -90,7 +79,6 @@ namespace RestaurantReviewsLibrary
                 Console.WriteLine("");
                 int idDecision;
                 Console.WriteLine("Enter a restaurant Id:");
-                
                 idDecision = int.Parse(Console.ReadLine());
                 crud.ReadRestaurantDetails(idDecision);
                 return false;

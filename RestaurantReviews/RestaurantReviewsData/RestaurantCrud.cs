@@ -44,7 +44,6 @@ namespace RestaurantReviewsData
         {
             return db.Restaurants.Where(name => name.restaurantName.Contains(str)).ToList();
         }
-            
         public ICollection<Restaurant> SortByRating(int listAmount)
         {
             return db.Restaurants.OrderByDescending(rating => rating.customerRating).Take(listAmount).ToList();

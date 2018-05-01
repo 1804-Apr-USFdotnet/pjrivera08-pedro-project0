@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RestaurantReviewsData;
 using RestaurantReviewsLibrary;
 
 namespace RestaurantReviewsClient
@@ -15,9 +14,7 @@ namespace RestaurantReviewsClient
             UserInteractor user = new RestaurantReviewsLibrary.UserInteractor();
             while (!user.OptionHandler())
             {
-
             }
-
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
