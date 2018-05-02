@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestaurantReviewsLibrary;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
 
 namespace RestaurantReviewsClient
 {
@@ -11,12 +14,14 @@ namespace RestaurantReviewsClient
     {
         static void Main(string[] args)
         {
+            Logger log = LogManager.GetCurrentClassLogger();
             UserInteractor user = new UserInteractor();
             while (!user.OptionHandler())
             {
+                
             }
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            log.Trace("Program exited");
+            
         }
     }
 }
