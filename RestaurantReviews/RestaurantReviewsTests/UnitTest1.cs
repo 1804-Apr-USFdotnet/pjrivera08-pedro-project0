@@ -54,9 +54,6 @@ namespace RestaurantReviewsTests
         };
 
         private List<Restaurant> actualList;
-
-        
-
         [TestMethod]
         public void DeserializeFromJSON_Test()
         {
@@ -84,7 +81,6 @@ namespace RestaurantReviewsTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
         [TestMethod]
         public void SortByRating_Test()
         {
