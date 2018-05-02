@@ -11,29 +11,26 @@ namespace RestaurantReviewsLibrary
     {
         RestaurantCrud crud = new RestaurantCrud();
         
-        public ICollection<Restaurant> SortByRating(int listAmount)
+        public ICollection<Restaurant> SortByRating(int listAmount, List<Restaurant> tempList)
         {
-            List<Restaurant> tempList = (List<Restaurant>)LibHelper.DataListToLibraryList(crud.ListRestaurants());
-            tempList.OrderByDescending(rating => rating.CustomerRating).Take(listAmount).ToList();
-            return tempList;
+            return tempList.OrderByDescending(rating => rating.CustomerRating).Take(listAmount).ToList();
         }
-        public ICollection<Restaurant> SortByRating()
+        public ICollection<Restaurant> convertList(List<RestaurantReviewsData.Restaurant> tempList)
         {
-            List<Restaurant> tempList = (List<Restaurant>)LibHelper.DataListToLibraryList(crud.ListRestaurants());
-            tempList.OrderByDescending(rating => rating.CustomerRating).ToList();
-            return tempList;
+            List<Restaurant> result = (List<Restaurant>)LibHelper.DataListToLibraryList(tempList);
+            return result;
         }
-        public ICollection<Restaurant> SortByNameDescending()
+        public ICollection<Restaurant> SortByRating(List<Restaurant> tempList)
         {
-            List<Restaurant> tempList = (List<Restaurant>)LibHelper.DataListToLibraryList(crud.ListRestaurants());
-            tempList.OrderByDescending(name => name.RestaurantName).ToList();
-            return tempList;
+            return tempList.OrderByDescending(rating => rating.CustomerRating).ToList();
         }
-        public ICollection<Restaurant> SearchRestaurantByName(string str)
+        public ICollection<Restaurant> SortByNameAscending(List<Restaurant> tempList)
         {
-            List<Restaurant> tempList = (List<Restaurant>)LibHelper.DataListToLibraryList(crud.ListRestaurants());
-            tempList.OrderByDescending(name => name.RestaurantName.Contains(str)).ToList();
-            return tempList;
+            return tempList.OrderBy(name => name.RestaurantName).ToList();
+        }
+        public ICollection<Restaurant> SearchRestaurantByName(string str, List<Restaurant> tempList)
+        {
+            return tempList.FindAll(name => name.RestaurantName.Contains(str)).ToList();
         }
     }
 }

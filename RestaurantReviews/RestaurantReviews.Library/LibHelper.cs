@@ -11,16 +11,16 @@ namespace RestaurantReviewsLibrary
     public static class LibHelper
     {
         private static RestaurantDBEntities db;
-        //static public IEnumerable<RestaurantReviewsLibrary.Restaurant> GetRestaurants()
-        //{
-        //    IEnumerable<RestaurantReviewsLibrary.Restaurant> result;
-        //    using ( db = new RestaurantDBEntities())
-        //    {
-        //        var dataList = db.Restaurants.ToList();
-        //        result = dataList.Select(x => DataToLibrary(x)).ToList();
-        //    }
-        //    return result;
-        //}
+        static public IEnumerable<RestaurantReviewsLibrary.Restaurant> GetRestaurants()
+        {
+            IEnumerable<RestaurantReviewsLibrary.Restaurant> result;
+            using (db = new RestaurantDBEntities())
+            {
+                var dataList = db.Restaurants.ToList();
+                result = dataList.Select(x => DataToLibrary(x)).ToList();
+            }
+            return result;
+        }
 
         static public void AddRestaurant(Restaurant item)
         {

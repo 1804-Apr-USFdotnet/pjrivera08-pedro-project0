@@ -35,9 +35,10 @@ namespace RestaurantReviewsLibrary
             ICollection<Restaurant> list;
             Console.WriteLine("");
             selection = SelectOption();
+            List<Restaurant> convertedList = (List<RestaurantReviewsLibrary.Restaurant>)sort.convertList((List<RestaurantReviewsData.Restaurant>)crud.ListRestaurants());
             if(selection == 1)
             {
-                list = sort.SortByRating(3);
+                list = sort.SortByRating(3,convertedList);
                 foreach(Restaurant rest in list)
                 {
                     Console.WriteLine(rest.RestaurantName + ": " + rest.CustomerRating);
@@ -57,7 +58,7 @@ namespace RestaurantReviewsLibrary
                 if(sortDecision == 1)
                 {
                     Console.WriteLine("");
-                    list = sort.SortByNameDescending();
+                    list = sort.SortByNameAscending(convertedList);
                     foreach (Restaurant rest in list)
                     {
                         Console.WriteLine(rest.RestaurantName);
@@ -66,7 +67,7 @@ namespace RestaurantReviewsLibrary
                 }
                 if(sortDecision == 2)
                 {
-                    list = sort.SortByRating();
+                    list = sort.SortByRating(convertedList);
                     Console.WriteLine("");
                     foreach (Restaurant rest in list) 
                     {
@@ -104,7 +105,7 @@ namespace RestaurantReviewsLibrary
                 string searchQuery;
                 Console.WriteLine("Search for: ");
                 searchQuery = Console.ReadLine();
-                list = sort.SearchRestaurantByName(searchQuery);
+                list = sort.SearchRestaurantByName(searchQuery,convertedList);
                 foreach(Restaurant res in list)
                 {
                     Console.WriteLine(res.RestaurantName);
