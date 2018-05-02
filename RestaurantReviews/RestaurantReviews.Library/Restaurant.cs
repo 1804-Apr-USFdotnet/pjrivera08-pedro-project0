@@ -8,7 +8,7 @@ namespace RestaurantReviewsLibrary
 {
     public class Restaurant
     {
-        private string restaurantName;
+        private string restaurantName; //This is where restaurant name is stored
         private string restaurantAddress;
         private string restaurantCity;
         private string restaurantState;
@@ -18,7 +18,7 @@ namespace RestaurantReviewsLibrary
 
         private List<Review> storeReviews = new List<Review>();
 
-        public string RestaurantName { get => restaurantName; set => restaurantName = value; }
+        public string RestaurantName { get => restaurantName; set => restaurantName = value; } //Will get or set restaurant name for you
         public string RestaurantAddress { get => restaurantAddress; set => restaurantAddress = value; }
         public string RestaurantCity { get => restaurantCity; set => restaurantCity = value; }
         public string RestaurantState { get => restaurantState; set => restaurantState = value; }

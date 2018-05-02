@@ -49,7 +49,7 @@ namespace RestaurantReviewsLibrary
         }
 
         public static RestaurantReviewsLibrary.Restaurant DataToLibrary(RestaurantReviewsData.Restaurant dataModel)
-        {
+        {   
             var libModel = new RestaurantReviewsLibrary.Restaurant()
             {
                 RestaurantName = dataModel.restaurantName,
@@ -59,6 +59,7 @@ namespace RestaurantReviewsLibrary
                 RestaurantPhoneNumber = dataModel.restaurantPhoneNumber,
                 RestaurantURL = dataModel.restaurantURL,
                 CustomerRating = (float)dataModel.customerRating
+                
             };
             return libModel;
         }

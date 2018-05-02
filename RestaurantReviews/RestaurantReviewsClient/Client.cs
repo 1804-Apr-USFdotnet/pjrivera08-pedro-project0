@@ -11,7 +11,7 @@ namespace RestaurantReviewsClient
     {
         static void Main(string[] args)
         {
-            UserInteractor user = new RestaurantReviewsLibrary.UserInteractor();
+            UserInteractor user = new UserInteractor();
             while (!user.OptionHandler())
             {
             }

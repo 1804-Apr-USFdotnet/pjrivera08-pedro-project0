@@ -30,7 +30,7 @@ namespace RestaurantReviewsData
             db.SaveChanges();
         }
         //Read Supplement
-        public IEnumerable<Restaurant> ListRestaurants()
+        public ICollection<Restaurant> ListRestaurants()
         {
             return db.Restaurants.ToList();
             
@@ -38,24 +38,6 @@ namespace RestaurantReviewsData
         public ICollection<Review> GetReviewsById(int IdNum)
         {
             return db.Reviews.Where(rev => rev.restaurantID == IdNum).ToList();
-        }
-
-        public ICollection<Restaurant> SearchRestaurantByName(string str)
-        {
-            return db.Restaurants.Where(name => name.restaurantName.Contains(str)).ToList();
-        }
-        public ICollection<Restaurant> SortByRating(int listAmount)
-        {
-            return db.Restaurants.OrderByDescending(rating => rating.customerRating).Take(listAmount).ToList();
-        }
-        public ICollection<Restaurant> SortByRating()
-        {
-            var  rests = db.Restaurants.ToList();
-            return rests.OrderByDescending(rating => rating.customerRating).Take((int)rests.Count()).ToList();
-        }
-        public ICollection<Restaurant> SortByNameDescending() 
-        {
-            return db.Restaurants.OrderByDescending(name => name.restaurantName).ToList();
         }
         
         //Read 

@@ -10,6 +10,7 @@ namespace RestaurantReviewsLibrary
     public class UserInteractor
     {
         RestaurantCrud crud = new RestaurantCrud();
+        SortLogic sort = new SortLogic();
         public int SelectOption()
         {
             int decision=0;
@@ -36,7 +37,7 @@ namespace RestaurantReviewsLibrary
             selection = SelectOption();
             if(selection == 1)
             {
-                list = LibHelper.DataListToLibraryList(crud.SortByRating(3));
+                list = sort.SortByRating(3);
                 foreach(Restaurant rest in list)
                 {
                     Console.WriteLine(rest.RestaurantName + ": " + rest.CustomerRating);
@@ -56,7 +57,7 @@ namespace RestaurantReviewsLibrary
                 if(sortDecision == 1)
                 {
                     Console.WriteLine("");
-                    list = LibHelper.DataListToLibraryList(crud.SortByNameDescending());
+                    list = sort.SortByNameDescending();
                     foreach (Restaurant rest in list)
                     {
                         Console.WriteLine(rest.RestaurantName);
@@ -65,7 +66,7 @@ namespace RestaurantReviewsLibrary
                 }
                 if(sortDecision == 2)
                 {
-                    list = LibHelper.DataListToLibraryList(crud.SortByRating());
+                    list = sort.SortByRating();
                     Console.WriteLine("");
                     foreach (Restaurant rest in list) 
                     {
@@ -103,7 +104,7 @@ namespace RestaurantReviewsLibrary
                 string searchQuery;
                 Console.WriteLine("Search for: ");
                 searchQuery = Console.ReadLine();
-                list = LibHelper.DataListToLibraryList(crud.SearchRestaurantByName(searchQuery));
+                list = sort.SearchRestaurantByName(searchQuery);
                 foreach(Restaurant res in list)
                 {
                     Console.WriteLine(res.RestaurantName);

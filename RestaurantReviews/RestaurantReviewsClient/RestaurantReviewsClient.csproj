@@ -63,10 +63,6 @@
       <Project>{80c28a45-b069-4dae-aa53-e3b80b36851a}</Project>
       <Name>RestaurantReviewsLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RestaurantReviewsData\RestaurantReviewsData.csproj">
-      <Project>{3c566cfd-5b7d-4ffe-9045-073712011f80}</Project>
-      <Name>RestaurantReviewsData</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
